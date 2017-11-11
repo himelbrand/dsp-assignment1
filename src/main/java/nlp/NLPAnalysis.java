@@ -16,14 +16,18 @@ import edu.stanford.nlp.trees.Tree;
 import edu.stanford.nlp.util.CoreMap;
 
 public class NLPAnalysis {
-    private Properties props1 = new Properties();
-    props1.put("annotators", "tokenize, ssplit, parse, sentiment");
-    private StanfordCoreNLP  sentimentPipeline =  new StanfordCoreNLP(props1);
 
+    Properties props1 = new Properties();
+    StanfordCoreNLP  sentimentPipeline;
     Properties props2 = new Properties();
-    props2.put("annotators", "tokenize , ssplit, pos, lemma, ner");
-    StanfordCoreNLP NERPipeline =  new StanfordCoreNLP(props2);
+    StanfordCoreNLP NERPipeline;
 
+    public NLPAnalysis(){
+        props1.put("annotators", "tokenize, ssplit, parse, sentiment");
+        sentimentPipeline =  new StanfordCoreNLP(props1);
+        props2.put("annotators", "tokenize , ssplit, pos, lemma, ner");
+        NERPipeline =  new StanfordCoreNLP(props2);
+    }
     public int findSentiment(String review) {
 
         int mainSentiment = 0;
