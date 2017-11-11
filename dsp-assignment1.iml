@@ -128,15 +128,6 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../ass1Jars/stanford-corenlp-3.3.0.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
           <root url="jar://$MODULE_DIR$/../ass1Jars/jollyday-0.4.7.jar!/" />
         </CLASSES>
         <JAVADOC />
@@ -147,6 +138,16 @@
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/../ass1Jars/stanford-corenlp-3.3.0-models.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="jar://$MODULE_DIR$/../ass1Jars/stanford-corenlp-3.3.0-models.jar!/" recursive="false" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../ass1Jars/stanford-corenlp-3.3.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
