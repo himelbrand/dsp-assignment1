@@ -1,5 +1,7 @@
 import java.util.List;
 import java.util.Properties;
+
+import com.google.gson.JsonArray;
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.ling.CoreAnnotations.NamedEntityTagAnnotation;
 import edu.stanford.nlp.ling.CoreAnnotations.SentencesAnnotation;
@@ -48,7 +50,11 @@ public class NLPClass {
         return mainSentiment;
     }
 
-    public void printEntities(String review){
+    public JsonArray printEntities(String review){
+
+        // return jsonArray containing the result
+        JsonArray resultEntitiesJsonArray = new JsonArray();
+
         // create an empty Annotation just with the given text
         Annotation document = new Annotation(review);
 
@@ -67,9 +73,10 @@ public class NLPClass {
                 String word = token.get(TextAnnotation.class);
                 // this is the NER label of the token
                 String ne = token.get(NamedEntityTagAnnotation.class);
-                System.out.println("\t-" + word + ":" + ne);
+                resultEntitiesJsonArray.add(word + ":" + ne);
             }
         }
+        return resultEntitiesJsonArray;
 
     }
 }
